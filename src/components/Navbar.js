@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import logoWhite from "../assets/logo-white.png";
 import logoDark from "../assets/logo-dark.png";
 
+import HamburgerMobile from "./HamburgerMobile";
+
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [isShowColor, setIsShowColor] = useState(false);
 
-  const hideLinks = showSearch ? "links hide" : "links";
+  const hideLinks = showSearch
+    ? "links hide hide-on-mobile"
+    : "links hide-on-mobile";
   const formClass = showSearch
     ? "nav-search-form show show-form"
     : "nav-search-form";
@@ -84,7 +88,9 @@ const Navbar = () => {
               ></i>
             </div>
 
-            <button>Try for Free</button>
+            <button className='hide-on-mobile'>Try for Free</button>
+            {/* Hamburger */}
+            <HamburgerMobile isShowColor={isShowColor} />
           </div>
         </div>
       </div>

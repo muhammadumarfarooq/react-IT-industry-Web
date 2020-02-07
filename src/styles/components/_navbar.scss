@@ -1,5 +1,5 @@
 .navbar {
-  padding: 20px 0px 20px;
+  padding: 25px 0px 25px;
   position: fixed;
   top: 0;
   left: 0;
@@ -59,7 +59,7 @@
         align-items: center;
         position: relative;
         .searching-icon {
-          margin: 0 20px;
+          margin-left: 20px;
           cursor: pointer;
           font-size: 20px;
         }
@@ -106,5 +106,80 @@
 .color-white {
   background-color: #fff !important;
   box-shadow: rgba(43, 83, 135, 0.08) 0px 3px 8px 0px;
-  padding: 15px 0px 15px;
+  padding: 18px 0px 18px;
+}
+
+.white {
+  color: #fff !important;
+  ::before {
+    color: #fff !important;
+  }
+  &:after {
+    color: #fff !important;
+  }
+}
+
+.white-bg {
+  background-color: #fff !important;
+  &::before {
+    background-color: #fff !important;
+  }
+  &:after {
+    background-color: #fff !important;
+  }
+}
+
+.black {
+  color: #000 !important;
+  ::before {
+    color: #000 !important;
+  }
+  &:after {
+    color: #000 !important;
+  }
+}
+
+.black-bg {
+  background-color: #000 !important;
+  ::before {
+    background-color: #000 !important;
+  }
+  &:after {
+    background-color: #000 !important;
+  }
+}
+
+.hamburger {
+  display: flex !important;
+  align-items: center;
+}
+
+// Mobile Navigation
+
+.mobile-navigation {
+  background-color: #fff;
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 90px);
+  top: 90px;
+  left: 0px;
+  opacity: 0;
+  visibility: hidden;
+  color: rgb(9, 20, 46);
+  padding: 27px 0px 40px;
+  transition: all 0.3s ease 0s;
+}
+
+.mobile-navigation-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  box-shadow: rgba(38, 78, 118, 0.1) 0px 3px 12px !important;
+}
+
+// hide on mobile
+
+@media (max-width: 993px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
 }
