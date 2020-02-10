@@ -27,3 +27,17 @@ a {
     text-decoration: none;
   }
 }
+
+// Showing or hiding element for Different Screens
+
+@media (max-width: 993px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 994px) {
+  .hide-on-big-screen {
+    display: none !important;
+  }
+}

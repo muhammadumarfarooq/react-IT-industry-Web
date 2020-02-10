@@ -1,14 +1,14 @@
 import React, { useState, Fragment } from "react";
 
-const HamburgerMobile = ({ isShowColor }) => {
-  const [active, setActive] = useState(false);
+const HamburgerMobile = ({ isShowColor, links }) => {
+  const [active, setActive] = useState(true);
 
   const mobileNavClass = active
     ? "mobile-navigation mobile-navigation-active"
     : "mobile-navigation";
 
   return (
-    <Fragment>
+    <div className='hide-on-big-screen'>
       <button
         onClick={() => setActive(!active)}
         className={`hamburger hamburger--collapse ${active ? "is-active" : ""}`}
@@ -23,8 +23,18 @@ const HamburgerMobile = ({ isShowColor }) => {
         </span>
       </button>
 
-      <div className={mobileNavClass}></div>
-    </Fragment>
+      <div className={mobileNavClass}>
+        <div className='mob-link-wrap container'>
+          <ul className='mob-menu'>
+            {links.map(link => (
+              <li>
+                <a href={link.path}>{link.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 };
 

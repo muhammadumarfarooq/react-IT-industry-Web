@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import logoWhite from "../assets/logo-white.png";
-import logoDark from "../assets/logo-dark.png";
-
 import HamburgerMobile from "./HamburgerMobile";
+import Button from "../Button";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -11,63 +10,60 @@ const Navbar = () => {
   const hideLinks = showSearch
     ? "links hide hide-on-mobile"
     : "links hide-on-mobile";
+
   const formClass = showSearch
     ? "nav-search-form show show-form"
     : "nav-search-form";
+
   const navBarStyle = isShowColor ? "navbar color-white" : "navbar";
+
   const navbarLinkStyle = isShowColor
     ? "navbar-link-black"
     : "navbar-link-white";
 
-  const handleSearch = () => {
-    setShowSearch(!showSearch);
-  };
+  const searchBtn = isShowColor ? "black" : "white";
 
   window.addEventListener("scroll", function(e) {
     if (window.scrollY > 80) setIsShowColor(true);
     else setIsShowColor(false);
   });
 
+  const links = [
+    { path: "#home", text: "Home" },
+    {
+      path: "#key-features",
+      text: "Key Features"
+    },
+    {
+      path: "#fund",
+      text: "Fund Raising"
+    },
+    { path: "#map", text: "Location" },
+    {
+      path: "#faqSection",
+      text: "FAQ"
+    }
+  ];
+
   return (
     <nav className={navBarStyle}>
       <div className='container'>
         <div className='navbar-wraper'>
-          <a href='#home'>
-            <img
-              className='logo'
-              src={isShowColor ? logoDark : logoWhite}
-              alt='Logo'
-            />
-          </a>
+          <Logo isShowColor={isShowColor} />
           <div className='links-wraper'>
             <ul className={hideLinks}>
-              <li className='is-current'>
-                <a className={navbarLinkStyle} href='#home'>
-                  Home
-                </a>
-              </li>
-              <li className=''>
-                <a className={navbarLinkStyle} href='#key-features'>
-                  Key Features
-                </a>
-              </li>
-              <li className=''>
-                <a className={navbarLinkStyle} href='#fund'>
-                  Fund Raising
-                </a>
-              </li>
-              <li className=''>
-                <a className={navbarLinkStyle} href='#map'>
-                  Locations
-                </a>
-              </li>
-              <li className=''>
-                <a className={navbarLinkStyle} href='#faqSection'>
-                  FAQ
-                </a>
-              </li>
+              {links.map(link => {
+                return (
+                  <li>
+                    <a className={navbarLinkStyle} href={link.path}>
+                      {link.text}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
 
+            {/* Toggle Form */}
             <div className='nav-search'>
               <form className={formClass}>
                 <input
@@ -80,17 +76,18 @@ const Navbar = () => {
               </form>
 
               <i
-                onClick={handleSearch}
+                onClick={() => setShowSearch(!showSearch)}
                 className={`fa fa-${
                   showSearch ? "times" : "search"
-                } searching-icon`}
-                style={{ color: isShowColor ? "#000" : "#fff" }}
+                } searching-icon ${searchBtn}`}
+                // style={{ color: isShowColor ? "#000" : "#fff" }}
               ></i>
             </div>
 
-            <button className='hide-on-mobile'>Try for Free</button>
+            <Button text='Try for Free' />
+
             {/* Hamburger */}
-            <HamburgerMobile isShowColor={isShowColor} />
+            <HamburgerMobile links={links} isShowColor={isShowColor} />
           </div>
         </div>
       </div>

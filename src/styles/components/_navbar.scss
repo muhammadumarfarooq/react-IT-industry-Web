@@ -33,18 +33,37 @@
 
         li {
           margin: 0px 17px;
+          position: relative;
+          // &:hover ul {
+          //   opacity: 1;
+          //   visibility: visible;
+          //   transform: translate(-50%, 0);
+          // }
+          // ul {
+          //   opacity: 0;
+          //   visibility: hidden;
+          //   position: absolute;
+          //   top: 100%;
+          //   width: 200px;
+          //   transform: translate(-50%, 50px);
+          //   background: #fff;
+          //   height: 161px;
+          //   left: 50%;
+          //   color: #000;
+          // }
+
           &:first-child {
             margin-left: 0;
           }
           a {
             &.navbar-link-black {
-              color: #000;
+              color: $primary-color;
               &:hover {
                 font-weight: normal;
               }
             }
             &.navbar-link-white {
-              color: #fff;
+              color: $light-color;
               &:hover {
                 font-weight: 700;
               }
@@ -82,7 +101,7 @@
             right: 5px;
             font-size: 20px;
             transform: translate(-50%, -50%);
-            color: #000;
+            color: $primary-color;
           }
         }
       }
@@ -104,82 +123,122 @@
   width: 320px !important;
 }
 .color-white {
-  background-color: #fff !important;
+  background-color: $light-color !important;
   box-shadow: rgba(43, 83, 135, 0.08) 0px 3px 8px 0px;
   padding: 18px 0px 18px;
 }
 
 .white {
-  color: #fff !important;
+  color: $light-color !important;
   ::before {
-    color: #fff !important;
+    color: $light-color !important;
   }
   &:after {
-    color: #fff !important;
+    color: $light-color !important;
   }
 }
 
 .white-bg {
-  background-color: #fff !important;
+  background-color: $light-color !important;
   &::before {
-    background-color: #fff !important;
+    background-color: $light-color !important;
   }
   &:after {
-    background-color: #fff !important;
+    background-color: $light-color !important;
   }
 }
 
 .black {
-  color: #000 !important;
+  color: $primary-color !important;
   ::before {
-    color: #000 !important;
+    color: $primary-color !important;
   }
   &:after {
-    color: #000 !important;
+    color: $primary-color !important;
   }
 }
 
 .black-bg {
-  background-color: #000 !important;
+  background-color: $primary-color !important;
   ::before {
-    background-color: #000 !important;
+    background-color: $primary-color !important;
   }
   &:after {
-    background-color: #000 !important;
+    background-color: $primary-color !important;
   }
-}
-
-.hamburger {
-  display: flex !important;
-  align-items: center;
 }
 
 // Mobile Navigation
-
 .mobile-navigation {
-  background-color: #fff;
+  background-color: $light-color;
   position: absolute;
   width: 100vw;
-  height: calc(100vh - 90px);
-  top: 90px;
+  height: calc(100vh - 69px);
+  top: 69px;
   left: 0px;
   opacity: 0;
   visibility: hidden;
-  color: rgb(9, 20, 46);
+  color: $primary-color;
   padding: 27px 0px 40px;
   transition: all 0.3s ease 0s;
+
+  &-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: rgba(38, 78, 118, 0.1) 0px 3px 12px !important;
+  }
+
+  .mob-link-wrap {
+    align-items: flex-start;
+    .mob-menu {
+      padding-bottom: 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      li {
+        margin: 0;
+
+        &:hover {
+          a {
+            transform: translateX(15px);
+            font-weight: 700;
+            color: $text-color;
+          }
+        }
+
+        a {
+          display: block;
+          color: $primary-color;
+          padding: 13px 0px;
+          border-radius: 5px;
+          transition: all 0.3s ease 0s;
+        }
+      }
+    }
+  }
 }
 
-.mobile-navigation-active {
-  opacity: 1 !important;
-  visibility: visible !important;
-  box-shadow: rgba(38, 78, 118, 0.1) 0px 3px 12px !important;
-}
+// Mobile Hamburger
+.hamburger {
+  display: flex !important;
+  align-items: center;
+  padding: 0 !important;
+  span.hamburger-box {
+    width: 24px;
+  }
+  .hamburger-inner {
+    width: 24px;
+    height: 2px;
 
-// hide on mobile
-
-@media (max-width: 993px) {
-  .hide-on-mobile {
-    display: none !important;
+    &::after {
+      width: 24px;
+      height: 2px;
+    }
+    &::before {
+      width: 24px;
+      height: 2px;
+    }
   }
 }
