@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HamburgerMobile from "./HamburgerMobile";
-import Button from "../Button";
+import Button from "../../Button";
 import Logo from "./Logo";
 
 const Navbar = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import logoWhite from "../../assets/logo-white.png";
-import logoDark from "../../assets/logo-dark.png";
+import logoWhite from "../../../assets/logo-white.png";
+import logoDark from "../../../assets/logo-dark.png";
 
 const Logo = ({ isShowColor }) => {
   return (

@@ -1,0 +1,41 @@
+.footer {
+  .container {
+    padding-top: 80px;
+    background-image: url(../../assets/footer-bg.png);
+    padding-bottom: 80px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center 50px;
+
+    .footer-logo {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      box-sizing: border-box;
+      width: 100px;
+      margin: 0px 0px 15px;
+    }
+    .footer-link-title {
+      margin-bottom: 30px;
+      margin-top: 0px;
+      font-size: 16px;
+      color: $light-color;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      li {
+        a {
+          color: $secondary-text-color;
+          font-size: 14px;
+          line-height: 36px;
+          font-weight: 300;
+          transition: all 0.2s ease 0s;
+          &:hover {
+            color: $light-color;
+          }
+        }
+      }
+    }
+  }
+}

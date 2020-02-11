@@ -28,6 +28,26 @@ a {
   }
 }
 
+// text
+
+// detail
+
+.detail-text {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.primary-color {
+  color: $primary-text-color;
+}
+
+.secondary-color {
+  color: $secondary-text-color;
+}
+
 // Showing or hiding element for Different Screens
 
 @media (max-width: 993px) {
