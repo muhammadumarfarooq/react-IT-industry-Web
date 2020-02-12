@@ -1,0 +1,22 @@
+.header {
+  padding-top: 120px;
+  .header-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+      line-height: 1.25;
+      font-weight: 400;
+      color: rgb(255, 255, 255);
+      margin-bottom: 24px;
+      letter-spacing: -0.025em;
+    }
+    p {
+      color: $primary-text-color;
+      font-size: 16px;
+      line-height: 33px;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -9,6 +9,7 @@ const HamburgerMobile = ({ isShowColor, links }) => {
 
   return (
     <div className='hide-on-big-screen'>
+      {/* button */}
       <button
         onClick={() => setActive(!active)}
         className={`hamburger hamburger--collapse ${active ? "is-active" : ""}`}
@@ -23,6 +24,7 @@ const HamburgerMobile = ({ isShowColor, links }) => {
         </span>
       </button>
 
+      {/* below navbar */}
       <div className={mobileNavClass}>
         <div className='mob-link-wrap container'>
           <ul className='mob-menu'>

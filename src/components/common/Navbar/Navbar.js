@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HamburgerMobile from "./HamburgerMobile";
-import Button from "../../Button";
+import Button from "../Button";
 import Logo from "./Logo";
 
 const Navbar = () => {
@@ -84,7 +84,9 @@ const Navbar = () => {
               ></i>
             </div>
 
-            <Button text='Try for Free' />
+            <div className='hide-on-mobile'>
+              <Button text='Try for Free' />
+            </div>
 
             {/* Hamburger */}
             <HamburgerMobile links={links} isShowColor={isShowColor} />
