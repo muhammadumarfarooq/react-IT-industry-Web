@@ -1,0 +1,23 @@
+.discount-banner {
+  background-color: $discount-bg-color;
+  display: flex;
+  padding: 7px 15px;
+  box-shadow: rgba(22, 53, 76, 0.05) 0px 5px 15px 0px;
+  margin-bottom: 15px;
+  border-radius: 4rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.03);
+  max-width: 350px;
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: $light-color;
+    margin-bottom: 0px;
+    font-weight: 700;
+    &.banner-discount {
+      color: $discount-text-color;
+      margin-right: 8px;
+    }
+  }
+}

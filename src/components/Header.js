@@ -3,6 +3,7 @@ import ButtonOutline from "./common/ButtonOutline";
 import Button from "./common/Button";
 import Fade from "react-reveal/Fade";
 import headerImg from "../assets/main.png";
+import DiscountBanner from "./common/DiscountBanner";
 
 const Header = () => {
   return (
@@ -11,11 +12,12 @@ const Header = () => {
         <div className='row'>
           <Fade bottom cascade>
             <div className='col-md-5 header-text-box'>
-              <h1>
+              <DiscountBanner />
+              <h1 className='title'>
                 Welcome next level cryptocurrency token with faster transfer
               </h1>
 
-              <p>
+              <p className='detail'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit sed
                 eiusmod tempor incididunt labore dolore magna ipsum dolor sit
                 amet consectetur.
