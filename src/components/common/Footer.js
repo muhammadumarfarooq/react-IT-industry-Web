@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logoWhite from "../../../assets/logo-white.png";
+import logoWhite from "../../assets/logo-white.png";
 
 const Footer = () => {
   const [contents] = useState([

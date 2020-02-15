@@ -1,7 +1,7 @@
 import React from "react";
 
 import Navbar from "./common/Navbar/Navbar";
-import Footer from "./common/Footer/Footer";
+import Footer from "./common/Footer";
 import Header from "./Header";
 
 const App = () => {
