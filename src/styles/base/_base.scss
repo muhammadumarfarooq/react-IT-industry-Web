@@ -56,6 +56,11 @@ a {
   color: $secondary-text-color;
 }
 
+.container-padding {
+  padding: $container-padding;
+  overflow: hidden;
+}
+
 // Showing or hiding element for Different Screens
 
 @media (max-width: 993px) {
