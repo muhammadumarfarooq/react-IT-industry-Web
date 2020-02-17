@@ -19,7 +19,7 @@ const CountItem = ({ number, label }) => {
         <span>{number}</span>
       </div>
       <div className='count-label'>
-        <span>{number === 1 ? singular(label) : label}</span>
+        <span>{number <= 1 ? singular(label) : label}</span>
       </div>
     </div>
   );
